@@ -45,55 +45,21 @@
             </div>
         </nav>
         <div class="actions-menu">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Nuevo</button> 
+          <h1>Mascotas</h1>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Nueva</button> 
         </div>
         <table class = "table table-stripped table-hover">
             <thead class="thead-dark">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Dueño</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-info"><i class="far fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-info"><i class="far fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>hola</td>
-                  <td>@twitter</td>
-                  <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-info"><i class="far fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                  </td>
-                </tr>
+              <tbody id="lista-mascotas">
+                
               </tbody>
         </table>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,31 +70,39 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                      <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>Tipo animal</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
+                  <form id="form">
+                      <div class="form-row">
+                        <div class="col">
+                          <select id="tipo" class="form-control">
+                            <option>Tipo animal</option>
+                            <option>Perro</option>
+                            <option>Gato</option>
+                            <option>Ave</option>
+                            <option>Otro</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="form-row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre mascota">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
+                          <select id="dueno" class="form-control" id="exampleFormControlSelect1">
+                            <option>Dueño</option>
+                            <option>Esteban</option>
+                            <option>Julian</option>
+                            <option>Jhon</option>
+                            <option>Felix</option>
+                          </select>
+                         </div>
                         </div>
                       </div>
                   </form>
 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button>
                 </div>
               </div>
             </div>
@@ -145,5 +119,6 @@
     -->
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/v4-shims.js"></script>
+    <script src="js/mascotas.js"></script>
   </body>
 </html>
