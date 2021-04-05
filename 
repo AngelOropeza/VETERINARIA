@@ -1,0 +1,53 @@
+[33mcommit 8c37d8ea8e5c49f904fcd8cc37c749ae94fc6c1b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Apr 5 13:13:06 2021 -0500
+
+    Refactorizar -> modulacion recursos y request-handler
+
+[33mcommit 2e6c0484d5236c55360b7eeda4608120cfecefcf[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Apr 5 13:00:37 2021 -0500
+
+    Refactorizar -> modular enrutador
+
+[33mcommit 47b904b7ac8b2ceae1f8b4ed8f1e7163b78a09c7[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Apr 5 12:49:22 2021 -0500
+
+    Iniciamos el desarrollo del backend con nodejs, API para obtener mascotas, crear mascotas y obtener una mascota por indice
+
+[33mcommit 7080221d9b6671f13d41ad7559e4bed4be18ca7e[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Tue Mar 30 22:11:58 2021 -0600
+
+    Se implementó el CRUD para Veterinarias y dueños
+
+[33mcommit 77ef66fc15d4a4925226a09d3649e2aec6a7e80b[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Tue Mar 30 20:36:12 2021 -0600
+
+    Funcionalidad al botón eliminar
+
+[33mcommit 9fd875c0d9ab3850874c8590cbdd709819c0c16a[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Mar 29 21:55:12 2021 -0600
+
+    Añadimos funcionalidad a editar y lo diferencíamos de crear
+
+[33mcommit f6a2836c17a55e8274ac82b38e19d258a3cf2574[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Mar 29 17:54:42 2021 -0600
+
+    Inicio de implementación en funcionamiento de agregar mascota
+
+[33mcommit bff05c751e91a58f73319db14979e697bf8d6969[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Mar 29 17:06:57 2021 -0600
+
+    Enmaquetamos el sitio de Mascotas y establecimos la estructura de la tabla
+
+[33mcommit e57dddee836c238bc69c50b55bb45d00b52b6cd1[m
+Author: AngelOropeza <qookiescream@gmail.com>
+Date:   Mon Mar 29 16:33:56 2021 -0600
+
+    Creation of stylesheet and index
