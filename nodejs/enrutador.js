@@ -1,7 +1,8 @@
 const recursos = require('./recursos');
 const mascotas = require("./rutas/mascotas");
-const veterinarias = require("./rutas/veterinarias")
-const duenos = require("./rutas/duenos")
+const veterinarias = require("./rutas/veterinarias");
+const duenos = require("./rutas/duenos");
+const consultas = require("./rutas/consultas");
 
 
 module.exports = {
@@ -10,7 +11,8 @@ module.exports = {
     },
     mascotas: mascotas(recursos.mascotas),
     veterinarias: veterinarias(recursos.veterinarias),
-    duenos: veterinarias(recursos.duenos),
+    duenos: duenos(recursos.duenos),
+    consultas: consultas(recursos.consultas),
     noEncontrado: (data, callback)=>{
         callback(404,{mensaje: 'no encontrado'});
     }
