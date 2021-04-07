@@ -13,11 +13,11 @@ module.exports = function consultas(consultas){
             callback(200, consultas);
         },
         post: (data, callback)=>{
-            let consulta = data.payload;
-            consulta.fechaCreacion = new Date();
-            consulta.fechaEdicion = null
-            consultas.push(data.payload);
-            callback(201, data.payload); //StatusCode 201 => CREATED
+            let nuevaConsulta = data.payload;
+            nuevaConsulta.fechaCreacion = new Date();
+            nuevaConsulta.fechaEdicion = null
+            consultas = [...consultas, nuevaConsulta]
+            callback(201, nuevaConsulta); //StatusCode 201 => CREATED
         },
         put: (data, callback)=>{
             if(typeof data.indice !== 'undefined'){
