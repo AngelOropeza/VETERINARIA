@@ -23,7 +23,12 @@ module.exports = function consultas(consultas){
             if(typeof data.indice !== 'undefined'){
                 console.log('handler consultas',{data})
                 if(consultas[data.indice]){
-                    consultas[data.indice] = data.payload;
+                    const  { fechaCreacion } = consultas[data.indice];
+                    consultas[data.indice] = { 
+                        ...data.payload,
+                        fechaCreacion,
+                        fechaEdicion: new Date(),
+                    };
                     return callback(200, consultas[data.indice]);
                 }
                 return callback(404, {
