@@ -5,14 +5,15 @@ const dueno = document.getElementById('dueno')
 const indice = document.getElementById('indice')
 const form = document.getElementById('form')
 const btnGuardar = document.getElementById('btn-guardar')
+const url = "http://localhost:5000/mascotas";
 
 let mascotas = [];
 
 async function listarMascotas(){
     try {
-        const respuesta = await fetch('http://localhost:5000/mascotas');
+        const respuesta = await fetch(url);
         const mascotasDelServer = await respuesta.json();
-        if(Array.isArray(mascotasDelServer) && mascotasDelServer.length > 0){
+        if(Array.isArray(mascotasDelServer)){
             mascotas = mascotasDelServer;
         }        
         const htmlMascotas = mascotas
@@ -37,26 +38,38 @@ async function listarMascotas(){
     }
 }
 
-function enviarDatos(evento){
+async function enviarDatos(evento){
     evento.preventDefault();
-    const datos = {
-        tipo: tipo.value,
-        nombre: nombre.value,
-        dueno: dueno.value
-    };
-    const accion = btnGuardar.innerHTML
-    switch(accion){
-        case 'Editar':
+    try {
+        const datos = {
+            tipo: tipo.value,
+            nombre: nombre.value,
+            dueno: dueno.value
+        };
+        let method = "POST";
+        let urlEnvio = url;
+        const accion = btnGuardar.innerHTML
+        if(accion === 'Editar'){
+            method = "PUT"
             //editar
             mascotas[indice.value] = datos;
-            break;
-        default:
-            //Crear
-            mascotas.push(datos);
-            break;
+            urlEnvio = `${url}/${indice.value}`;
+        }
+        const respuesta = await fetch(urlEnvio, {
+            method,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datos),
+            mode:"cors",
+        });
+        if(respuesta.ok){
+            listarMascotas();
+            resetModal();
+        }
+    } catch (error) {
+        throw(error);
     }
-    listarMascotas();
-    resetModal();
 }
 
 function editar(index){
@@ -80,9 +93,19 @@ function resetModal(){
 }
 
 function eliminar(index){
-    return function clickEnEliminar(){
-        mascotas = mascotas.filter((mascota, indiceMascota)=> indiceMascota !== index);
-        listarMascotas();
+    try {
+        const urlEnvio = `${url}/${index}`;
+        return async function clickEnEliminar(){
+            const respuesta = await fetch(urlEnvio, {
+                method: "DELETE",
+            });
+            if(respuesta.ok){
+                listarMascotas();
+                resetModal();
+            }
+        }
+    } catch (error) {
+        throw(error);
     }
 }
 
