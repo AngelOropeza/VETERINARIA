@@ -5,7 +5,7 @@ const dueno = document.getElementById('dueno')
 const indice = document.getElementById('indice')
 const form = document.getElementById('form')
 const btnGuardar = document.getElementById('btn-guardar')
-const url = "http://localhost:5000/mascotas";
+const url = "https://veterinaria-backend-mbpfisgu1-angeloropeza.vercel.app/mascotas";
 
 let mascotas = [];
 
